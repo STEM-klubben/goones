@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisitVallentuna</title>
+    <!--Länkar till stylesheets - först styles sedan den specifika-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body onload="checkOnResizeIndex()">
+    <a id="tillbaka" href="../">tillbaka till goones</a>
+    <!--header för sidan-->
+    <header class="spread-container" id="header">
+        <!--kommun logotyp-->
+        <img id="logotyp-kommun" src="img/placeholder_logo.png" alt="">
+        <!--rubrik-->
+        <h1>VisitVallentuna</h1>
+        <!--Navigering - länkar mellan sidorna - selected för den som man redan är på-->
+        <a class="nav-lank hem nav-selected" href="index.html">Hem</a>
+        <a class="nav-lank aktiviteter" href="aktiviteter.html">Aktiviteter</a>
+        <a class="nav-lank evengemang" href="evengemang.html">Evengemang</a>
+        <a class="nav-lank historia" href="historia.html">Historia</a>
+
+        <div class="spread-container" id="menu-container">
+            <!--hamburgarmeny för mindre skärmar-->
+            <!--javascript:void(0) gör att länken funkar-->
+            <a href="javascript:void(0);" id="hamburgarmeny" onclick="openMenu('switch')">
+                <!--former som bildar menyn-->
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+
+            <!--knapp för att byta språk-->
+            <button id="byt-sprak">Sv/En</button>
+        </div>
+
+        <!--det som ska visas när menyn är öppen-->
+        <div id="oppen-hamburgarmeny">
+            <a class="nav-lank hem nav-selected" href="index.html">Hem</a>
+            <a class="nav-lank aktiviteter" href="aktiviteter.html">Aktiviteter</a>
+            <a class="nav-lank evengemang" href="evengemang.html">Evengemang</a>
+            <a class="nav-lank historia" href="historia.html">Historia</a>
+        </div>
+
+    </header>
+
+    <!--main för sidan-->
+    <main>
+        <!--sektion för slideshow-->
+        <section id="slideshow-sektion">
+            <!--slideshow för bilder-->
+            <div id="slideshow-container">
+                <!--slides-->
+                <div class="slide fade">
+                    <img class="slideshow-img" src="img/placeholder_hero.png" alt="">
+                    <p class="caption">hello1</p>
+                </div>
+
+                <div class="slide fade">
+                    <img class="slideshow-img" src="img/placeholder_hero.png" alt="">
+                    <p class="caption">hello2</p>
+                </div>
+
+                <div class="slide fade">
+                    <img class="slideshow-img" src="img/placeholder_hero.png" alt="">
+                    <p class="caption">hello3</p>
+                </div>
+
+                <div class="slide fade">
+                    <img class="slideshow-img" src="img/placeholder_hero.png" alt="">
+                    <p class="caption">hello4</p>
+                </div>
+
+                <!--förra och nästa slide-knapp-->
+                <a id="forra" onclick="plusSlides(-1)">&#10094;</a>
+                <a id="nasta" onclick="plusSlides(1)">&#10095;</a>
+                
+            </div>
+
+            <div id="cirklar-slideshow-container">
+                <span class=cirkel onclick="currentSlide(1)"></span>
+                <span class=cirkel onclick="currentSlide(2)"></span>
+                <span class=cirkel onclick="currentSlide(3)"></span>
+                <span class=cirkel onclick="currentSlide(4)"></span>
+            </div>
+        </section>
+        
+        <!--sektion för info-->
+        <section id="info-sektion">
+            <!--info om kommunen - titel, text och bild-->
+            <article id="om-vallentuna" class="artikel-bredvid-bild">
+                <h3 class="artikel-titel">Om Vallentuna</h3>
+                <p class="artikel-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt repellendus sed ipsum. Pariatur tempora facere, in, suscipit cupiditate velit et nisi, aut deleniti quasi recusandae. Praesentium pariatur ratione dolores?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, esse tempore perspiciatis sapiente deleniti excepturi tenetur aliquam doloremque distinctio necessitatibus fugit laboriosam enim id in, corporis provident? Rerum, nesciunt sapiente.</p>
+                <img class="artikel-bild" src="img/placeholder_gallery.png" alt="">
+            </article>
+
+            <!--info om turistbyrån - titel, text och bild-->
+            <article id="om-oss" class="artikel-bredvid-bild">
+                <h3 class="artikel-titel">Om oss</h3>
+                <p class="artikel-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, odio? Architecto pariatur maiores similique sapiente, sequi, eius impedit quaerat perspiciatis ducimus sed aperiam distinctio? Facilis quidem corporis corrupti repellendus! Quaerat!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, esse tempore perspiciatis sapiente deleniti excepturi tenetur aliquam doloremque distinctio necessitatibus fugit laboriosam enim id in, corporis provident? Rerum, nesciunt sapiente.</p>
+                <!--bild ska vara en karta - antingen screenshot eller openstreetmap integrering-->
+                <map class="artikel-bild" name="karta" id="map"></map>
+            </article>
+        </section>
+        
+    </main>
+
+    <!--footer för sidan-->
+    <footer>
+        <!--navigering i footer-->
+        <section class="spread-container" id="nav-container">
+            <!--rubrik-->
+            <h1>VisitVallentuna</h1>
+            <!--Navigering - länkar mellan sidorna - selected för den som man redan är på-->
+            <a class="nav-lank hem nav-selected" href="index.html">Hem</a>
+            <a class="nav-lank aktiviteter" href="aktiviteter.html">Aktiviteter</a>
+            <a class="nav-lank evengemang" href="evengemang.html">Evengemang</a>
+            <a class="nav-lank historia" href="historia.html">Historia</a>
+            <!--ikoner för sociala medier visas för stora skärmar-->
+            <div class="social-media" id="media-stor-skarm">
+                <img class="social-media-icon" src="img/placeholder_media.png" alt="">
+                <img class="social-media-icon" src="img/placeholder_media.png" alt="">
+                <img class="social-media-icon" src="img/placeholder_media.png" alt="">
+            </div>
+        </section>
+
+        <!--kontakta oss-->
+        <section class="spread-container" id="kontakt-container">
+            <h2>Kontakta oss</h2>
+            <!--telefonnummer-->
+            <p>+46 76 917 20 53</p>
+            <p>turistbyra@vallentuna.se</p>
+            <!--skriv upp till nyhetsbrev via modal-->
+            <button onclick="document.getElementById('nyhetsbrev-modal').showModal();" id="nyhetsbrev">Nyhetsbrev</button>
+        </section>
+
+        <!--ikoner för sociala medier visas för små skärmar-->
+        <div class="social-media" id="media-liten-skarm">
+            <img class="social-media-icon" src="img/placeholder_media.png" alt="">
+            <img class="social-media-icon" src="img/placeholder_media.png" alt="">
+            <img class="social-media-icon" src="img/placeholder_media.png" alt="">
+        </div>
+
+        <div class="spread-container" id="extra-container">
+            <!--länk till kommunen-->
+            <p><a class="nav-lank" href="https://www.vallentuna.se">Vallentuna Kommun</a></p>
+            <!--policy ska öppna modal-->
+            <button onclick="document.getElementById('policy-modal').showModal();" id="kakor">Information om kakor</button>
+        </div>
+
+        <!--modal för nyhetsbrev-->
+        <dialog class="modal" id="nyhetsbrev-modal">
+            <!--övre del av modal-->
+            <div class="modal-header">
+                <!--titel för modal-->
+                <h3 class="modal-titel">Få exklusiva erbjudanden med vårt nyhetsbrev!</h3>
+                <!--lämna modal-->
+                <!--en form med en sumbitknapp gör att man kan lämna dialogen-->
+                <form method="dialog" class="modal-exit-form"><input type="submit" value="&times;" class="modal-exit"></form>
+            </div>
+            <!--body av modal-->
+            <div class="modal-body">
+                <!--form för nyhetsbrev-->
+                <form class="modal-form">
+                    
+                    <!--formgrupp för namn-->
+                    <div class="form-group">
+                        <!--namn-->
+                        <label for="namn" class="form-label">Namn: </label>
+                        <input class="form-input" type="text" name="namn" id="namn" required>
+                    </div>
+                    <!--formgrupp för epost-->
+                    <div class="form-group">
+                        <!--epost-->
+                        <label for="epost" class="form-label">Epost:</label>
+                        <input class="form-input" type="email" name="epost" id="epost" required>
+                    </div>
+                    
+                    <!--lämna in-->
+                    <input type="submit" value="Anmäl dig!" class="modal-exit">
+                </form>
+                
+            </div> 
+        </dialog>
+
+        <!--modal för policy-->
+        <dialog class="modal" id="policy-modal">
+            <!--övre del av modal-->
+            <div class="modal-header">
+                <!--titel för modal-->
+                <h3 class="modal-titel">Kakor</h3>
+                <!--lämna modal-->
+                <!--en form med en sumbitknapp gör att man kan lämna dialogen-->
+                <form method="dialog" class="modal-exit-form"><input type="submit" value="&times;" class="modal-exit"></form>
+            </div>
+            <!--body av modal-->
+            <div class="modal-body">
+                <!--text för modal-->
+                <p class="modal-text">Denna webbplats använder kakor för att ge dig en bättre och mer personlig upplevelse. Kakor är små textfiler som lagras på din enhet när du besöker en webbplats. De används för att komma ihåg inställningar, analysera hur sidan används och förbättra funktionaliteten. Vi använder både sessionskakor och permanenta kakor. Sessionskakor raderas när du stänger webbläsaren, medan permanenta kakor lagras längre och hjälper oss att känna igen dig vid framtida besök. Vissa kakor är nödvändiga för att webbplatsen ska fungera korrekt, medan andra används för statistik och marknadsföring. Genom att fortsätta använda denna webbplats godkänner du vår användning av kakor. Du kan när som helst ändra dina inställningar i webbläsaren och radera sparade kakor. Observera dock att vissa funktioner kan sluta fungera om du blockerar vissa typer av kakor.</p>
+            </div> 
+        </dialog>
+        
+
+
+    </footer>
+
+    <!--länkar till scriptfiler-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
