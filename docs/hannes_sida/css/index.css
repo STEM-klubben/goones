@@ -1,0 +1,156 @@
+:root {
+    /*färger*/
+    --txt-slideshow: #000;
+    --circle-slideshow: #9b9b9b;
+    --circle-select-slideshow: #5e5e5e;
+    --bg-forra-nasta: rgba(0,0,0,0.8);
+}
+
+/*grid template för vallentuna info - bild till höger*/
+#om-vallentuna {
+    /*specifika kolumner*/
+    grid-template-columns: auto 320px;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "rubrik bild"
+    "text bild";
+}
+
+/*grid template för om oss - bild till vänster*/
+#om-oss {
+    /*specifika kolumner*/
+    grid-template-columns: 320px auto;
+    grid-template-areas: 
+    "bild rubrik"
+    "bild text";
+}
+
+/*css för slideshowen*/
+
+/*containern*/
+.slideshow-container {
+    margin: auto;
+}
+
+/*enskilda slides*/
+.slide {
+    /*gömmer som default*/
+    display: none;
+}
+
+/*förra och nästa-knapparna*/
+#forra, #nasta {
+    /*ändrar utseende på muspekaren*/
+    cursor: pointer;
+    /*position*/
+    position: absolute;
+    top: 50%;
+    width: auto;
+    /*padding*/
+    padding: 16px;
+    /*färg och utseende*/
+    color: var(--txt-slideshow);
+    font-weight: bold;
+    font-size: 18px;
+    /*transition*/
+    transition: 0.6s ease;
+    /*gör att bara färgen animeras - inte rörelsen*/
+    transition-property: background;
+    /*runda hörn*/
+    border-radius: 0 3px 3px 0;
+    /*tillåter inte textmarkering*/
+    user-select: none;
+}
+
+/*för nästa-knappen*/
+#nasta {
+    /*position*/
+    right: 0;
+    /*runda hörn (andra hållet)*/
+    border-radius: 3px 0 0 3px;
+}
+
+/*vid hover på knapparna*/
+#forra:hover, #nasta:hover {
+    /*backgrundsfärg med lite alpha*/
+    background-color: var(--bg-forra-nasta);
+}
+
+/*caption text*/
+.caption {
+    /*utseende*/
+    color: var(--txt-slideshow);
+    font-size: 15px;
+    /*padding*/
+    padding: 8px 12px;
+    /*position*/
+    position: relative;
+    bottom: 8px;
+    /*bredd full*/
+    width: 100%;
+    /*text align*/
+    text-align: center;
+    /*ingen padding på sidorna*/
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*cirkel som visar sida*/
+.cirkel {
+    /*ändrar musets utseende*/
+    cursor: pointer;
+    /*storlek*/
+    width: 15px;
+    height: 15px;
+    /*margin*/
+    margin: 0 2px;
+    /*färg*/
+    background-color: var(--circle-slideshow);
+    /*gör den rund*/
+    border-radius: 50%;
+    /*visar de bredvid varandra*/
+    display: inline-block;
+    /*transition av backgrundsfärg*/
+    transition: background-color 0.6s ease;
+    
+}
+
+/*för containern till cirklarna*/
+#cirklar-slideshow-container {
+    /*centrerar cirklarna*/
+    text-align: center;
+    /*tillåter inte textmarkering*/
+    user-select: none;
+    /*margin*/
+    margin-bottom: 20px;
+
+}
+
+/*för den nuvarande cirkeln och den som får hover*/
+#aktiv, .cirkel:hover {
+    /*ger en mörkare färg*/
+    background-color: var(--circle-select-slideshow);
+}
+
+/*för den som ska fadeas*/
+.fade {
+    /*animering av fade*/
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/*instruktioner för fade - från 'from' till 'to'*/
+@keyframes fade {
+    /*ändrar opacitet*/
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+map {
+    width: 320px;
+    height: 240px;
+}
