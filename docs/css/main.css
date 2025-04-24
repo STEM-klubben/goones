@@ -10,6 +10,10 @@ body {
     background-position: center;
 }
 
+img {
+    max-width: 100%;
+}
+
 section {
     background-color: rgb(50, 53, 59);
     padding: 20px;
