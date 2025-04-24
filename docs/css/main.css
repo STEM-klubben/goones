@@ -8,6 +8,7 @@ body {
     background-attachment: fixed;
     /*sätter bakgrunsbolden i mitten så ponti alltid syns.*/
     background-position: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 img {
@@ -21,7 +22,6 @@ section {
     width: 80%;
     border-radius: 15px;
     max-width: 900px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #fafafa;
 }
 
