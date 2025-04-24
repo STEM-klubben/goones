@@ -15,7 +15,7 @@ img {
     max-width: 100%;
 }
 
-header {
+header, footer {
     background-color: #23262c;
     border-radius: 15px;
     padding: 20px;
@@ -74,4 +74,18 @@ li,p {
 
 p {
     text-align:justify;
+}
+
+footer nav {
+    margin: 0;
+}
+footer {
+    padding: 0;
+    display:flex;
+    justify-content: space-between;
+}
+
+.footer-side {
+    width: 120px;
+    margin: auto 10px;
 }
