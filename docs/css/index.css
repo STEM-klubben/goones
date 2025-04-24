@@ -23,7 +23,7 @@ dialog {
     color: yellow;
 }
 
-.mongo {
+#mongo {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(60px auto);
@@ -33,7 +33,7 @@ dialog {
 }
 
 @media screen and (max-width: 700px){
-    .mongo {
+    #mongo {
         grid-template-rows: repeat(60px auto auto);
         grid-template-areas: 
         "m m"
@@ -42,15 +42,15 @@ dialog {
     }
 }
 
-.mongotext {
+#mongotext {
     grid-area: m;
 }
 
-.mongoflagga {
+#mongoflagga {
     grid-area: f;
 }
 
-.mongolista {
+#mongolista {
     grid-area: l;
 }
 
