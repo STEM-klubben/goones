@@ -1,4 +1,5 @@
 @import "main.css";
+@import "artiklar.css";
 dialog {
     position: absolute;
 }
@@ -22,35 +23,3 @@ dialog {
 #wakamole:hover {
     color: yellow;
 }
-
-#mongo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(60px auto);
-    grid-template-areas: 
-    "m m"
-    "l f";
-}
-
-@media screen and (max-width: 700px){
-    #mongo {
-        grid-template-rows: repeat(60px auto auto);
-        grid-template-areas: 
-        "m m"
-        "l l"
-        "f f";
-    }
-}
-
-#mongotext {
-    grid-area: m;
-}
-
-#mongoflagga {
-    grid-area: f;
-}
-
-#mongolista {
-    grid-area: l;
-}
-
