@@ -27,9 +27,17 @@ h1 {
 }
 
 a {
-    color: cyan;
+    color: yellow;
 }
 
 li {
     margin: 20px 0px;
+}
+
+li,p {
+    color: cyan;
+}
+
+p {
+    text-align:justify;
 }
