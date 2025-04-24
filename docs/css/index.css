@@ -3,6 +3,11 @@ dialog {
     position: absolute;
 }
 
+#kai {
+    width: 360px;
+    height: 360px;
+}
+
 #wakamole {
     font: inherit;
     background-color: black;
@@ -11,4 +16,9 @@ dialog {
     box-shadow: 2px 1px 5px white;
     border: 0;
     padding: 5px 10px;
+    cursor: pointer;
+}
+
+#wakamole:hover {
+    color: yellow;
 }
