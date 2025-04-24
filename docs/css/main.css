@@ -8,23 +8,38 @@ body {
     background-attachment: fixed;
     /*sätter bakgrunsbolden i mitten så ponti alltid syns.*/
     background-position: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-main {
+img {
+    max-width: 100%;
+}
+
+header {
+    background-color:
+    rgb(50, 53, 59);
+    color: #fafafa;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+    margin: 0;
+    
+}
+section {
     background-color: rgb(50, 53, 59);
     padding: 20px;
     margin: 60px auto;
     width: 80%;
     border-radius: 15px;
     max-width: 900px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #fafafa;
 }
 
-h1 {
-    text-align: center;
-    
-}
+
 
 a {
     color: yellow;
