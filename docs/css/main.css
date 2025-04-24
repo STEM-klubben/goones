@@ -16,21 +16,40 @@ img {
 }
 
 header {
-    background-color:
-    rgb(50, 53, 59);
-    color: #fafafa;
+    background-color: #23262c;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
 }
 
 h1 {
     text-align: center;
     font-size: 70px;
     margin: 0;
-    
+    background-color:#32353b;
+    color: #fafafa;
+    border-radius: 15px;
+    padding: 10px;
+    margin: -20px;
 }
+
+.no-link {
+    cursor: not-allowed;
+    color: red;
+}
+
+nav {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav>* {
+    margin: auto 25px;
+}
+
 section {
-    background-color: rgb(50, 53, 59);
+    background-color: #32353b;
     padding: 20px;
     margin: 60px auto;
     width: 80%;
