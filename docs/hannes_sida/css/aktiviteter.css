@@ -1,0 +1,34 @@
+:root {
+    /*färger*/
+    --bg-artikel-aktivitet: lightgrey;
+}
+
+/*flexbox container för aktiviteter*/
+#aktiviteter-container {
+    /*display*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/*olika aktiviteter inuti flexbox*/
+.aktivitet {
+    /*bakgrundsfärg för aktiviteterna*/
+    background-color: var(--bg-artikel-aktivitet);
+    /*får inte vara större än vad bilderna är*/
+    max-width: 320px;
+    padding: 5px;
+    /*marginal mellan de olika raderna och kolumnerna*/
+    margin: 15px 5px;
+    border-radius: 15px;
+}
+
+.aktivitet-titel {
+    /*centrerar titel för aktivitetsartiklarna*/
+    text-align: center;
+}
+
+.aktivitet-text {
+    /*ger justify för texter i aktivitetsartiklarna*/
+    text-align: justify;
+}
