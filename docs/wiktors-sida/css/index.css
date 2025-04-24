@@ -1,0 +1,129 @@
+@import "main.css";
+
+.section-intro {
+    box-sizing: border-box;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.intro-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+
+.intro-btns li {
+    list-style-type: none;
+}
+
+.section-features {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.feature-linker {
+    width: min(100%, 350px);
+    box-sizing: border-box;
+    margin: 10px;
+
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.feature {
+    box-sizing: border-box;
+    width: min(100%, 350px);
+
+    /* Ett sätt att sätta bild under text */
+    background-image: linear-gradient(#fffa, #fffa),
+                      url('https://picsum.photos/360/270');
+                      
+    position: relative;
+
+    /* Denna rad utnyttjar att padding-procent utgår från width och inte
+       height. Vi kan därmed få till en aspect ratio på 16:9 */
+    padding-top: min(75%, calc(350px * 9 / 16));
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.feature-inner {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-header,
+.feature-link,
+.feature-text {
+    margin: 3%;
+}
+
+.feature-link {
+    flex: 0 1 auto;
+}
+
+.feature-text {
+    overflow: hidden;
+    max-height: 200px;
+
+    font-size: 80%;
+}
+
+@media screen and (max-width: 700px) {
+    .section-features {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: min(95%, 425px);
+    }
+    .feature-text {
+        font-size: unset;
+    }    
+}
+
+.section-gallery {
+    max-width: 1300px;
+    box-sizing: border-box;
+    margin: auto;
+
+    text-align: center;
+}   
+
+.gallery {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "a a b c"
+                         "a a d e";
+}
+
+.gallery-item,
+.gallery-item picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item {
+    cursor: crosshair;
+}
+
+.gallery-item-a{grid-area:a}
+.gallery-item-b{grid-area:b}
+.gallery-item-c{grid-area:c}
+.gallery-item-d{grid-area:d}
+.gallery-item-e{grid-area:e}
