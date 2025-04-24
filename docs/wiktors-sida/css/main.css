@@ -1,0 +1,349 @@
+/*
+main.css
+Inkluderas på alla sidor
+*/
+
+/* Google Font: Special Gothic */
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap');
+
+/* :root innehåller färger, default settings, fonts etc */
+:root {
+    --bg-clr: #fff;
+    --clr: #000;
+    --font-fam: 'Special Gothic', sans-serif;
+
+    --hdr-bg-clr: #2870f0;
+    --hdr-clr: var(--clr);
+    --hdr-font-fam: var(--font-fam);
+    
+    --login-clr1: #ddd;
+    --login-clr2: #333;
+
+
+    --ftr-bg-clr: #12151a;
+    --ftr-clr: #fff;
+    --ftr-font-fam: var(--font-fam);
+}
+
+/* Basinställningar för body */
+body {
+    margin: 0;
+    padding: 0;
+
+    /* För att footer ska hamna vid botten */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+/* Ser till att inga undersektioner till body växer i onödan */
+body>* {
+    flex: 0 0 auto;
+}
+
+/* Main header */
+.header {
+    background-color: var(--hdr-bg-clr);
+    color: var(--hdr-clr);
+    font-family: var(--hdr-font-fam);
+    padding: 10px 5%;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Bilden i headern rundas av lite */
+.header-logo>img {
+    border-radius: 40%;
+}
+
+/* Inkluderar logga och titel. Ser till att de är centrerade mm */
+.header-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* nav utgör länkarna */
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    list-style: none; /* Tar bort prickarna från ul */
+    gap: min(5%, 60px);
+    padding-left: 0;
+    z-index: 1;
+    flex: 1 1 30%;
+}
+
+.header-nav>li {
+    padding: 0;
+}
+
+/* Ser till att header-nav-länkar ser ut som vanlig text */
+.header-nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Speciell styling för knappar */
+.btn>a {
+    display: block;
+    width: 115px;
+    height: 25px;
+    padding: 10px 2px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+/* Färger för login- och join-knappar */
+.btn-login>a {
+    background: var(--login-clr1);
+    color: var(--login-clr2);
+}
+.btn-join>a {
+    background: var(--login-clr2);
+    color: var(--login-clr1);
+}
+
+.header-link>a {
+    width: 85px;
+    height: 20px;
+}
+
+/* btn och toggle har att göra med hamburgarmenyn, som göms när vi inte ligger
+   under 1000px */
+.header_nav_btn,
+#header_nav_toggle {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    #header_nav_toggle {
+        opacity: 0;
+    }
+
+
+    /* Rotera hamburgerknappen till ett X när den är aktiv */
+    #header_nav_toggle:checked+.header_nav_btn>span {
+        transform: rotate(45deg);
+    }
+    #header_nav_toggle:checked+.header_nav_btn>span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    #header_nav_toggle:checked+.header_nav_btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #header_nav_toggle:checked~.header-nav {
+        right: 0 !important;
+    }
+
+    .header_nav_btn {
+        position: absolute;
+        right: 40px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ser till att vi får ett streck i hamburgerknappen */
+    .header_nav_btn>span,
+    .header_nav_btn>span::before,
+    .header_nav_btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+    }
+
+    /* Before och after gör så att mittenstrecket av hamburgaren dupliceras
+       över och under */
+    .header_nav_btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .header_nav_btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .header-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+    }
+
+    .header-nav>li {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+    .header-nav>li:hover {
+        background-color: #CFD8DC;
+    }
+
+    .header-link>a {
+        text-align: unset;
+        width: unset;
+        height: unset;
+        background-color: unset;
+        color: inherit;
+    }
+
+}
+
+/* Div. responsivitet */
+@media screen and (max-width: 450px) {
+    .header-logo {
+        width: 64px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .header-title-text {
+        font-size: 16px;
+    }
+}
+
+/* Styling för main */
+.main {
+    background-color: var(--bg-clr);
+    color: var(--clr);
+    font-family: var(--font-fam);
+
+    margin: auto;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5%;
+}
+
+/* Styling för footer, skapar en grid med två rader */
+.footer {
+    background-color: var(--ftr-bg-clr);
+    color: var(--ftr-clr);
+    font-family: var(--ftr-font-fam);
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+/* Under här följer lite footer-grejs. */
+.footer * {
+    color: inherit;
+}
+
+/* Skapar kontrast för nyhetsbrevs-submit */
+.footer input[type=submit] {
+    color: var(--ftr-bg-clr);
+}
+
+.footer-above {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+    gap: 5%;
+    padding: 5%;
+    box-sizing: border-box;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .footer-above {
+        display: block;
+    }
+}
+
+.footer-above>* {
+    flex: 0 0 50%;
+}
+
+.sitemap ul {
+    padding: 0;
+}
+
+.sitemap ul>li {
+    list-style: none;
+}
+
+.legal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+img, picture {
+    width: 100%;
+    height: auto;
+}
+
+/* Modals. Dessa är nominellt sett del av footern men de visas över hela skärmen. Därför får de width och height enl. viewport width/height */
+#integrity,
+#terms {
+    width: 50vw;
+    height: 80vh;
+    box-sizing: border-box;
+
+    border-radius: 10px;
+
+    color: #000;
+    overflow-y: scroll; /* Ser till att scrollbar visas */
+}
+
+/* Backdrop är bakgrunden för modals */
+#integrity::backdrop,
+#terms::backdrop {
+    background-color: #000b;
+}
+
+.clr-red {
+    color: red;
+}
+
+/* Skapar ett a-element utan styling */
+.linker {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.hidden {
+    display: none;
+}

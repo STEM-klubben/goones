@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/events.css">
+
+    <title>SL-spotting | Events</title>
+</head>
+<body>
+    <header class="header">
+        <a class="linker" href=".">
+            <div class="header-title">
+                <div class="header-logo">
+                    <img alt="Logga" src="https://picsum.photos/128">
+                </div>
+
+                <h1 class="header-title-text">SL-spotting</h1>
+            </div>
+        </a>
+
+        <input id="header_nav_toggle" type="checkbox">
+        <label class="header_nav_btn" for="header_nav_toggle">
+            <span></span>
+        </label>
+        <ul class="header-nav">
+            <li class="header-link btn">
+                <a href=".">Hem</a>
+            </li>
+            <li class="header-link btn">
+                <a href="events.html">Events</a>
+            </li>
+            <li class="header-link btn">
+                <a href="history.html">Historia</a>
+            </li>
+            <li class="header-link btn btn-login">
+                <a href="javascript:loginModal()">Logga in</a>
+            </li>
+            <li class="header-link btn btn-join">
+                <a href="membership.html">Gå med</a>
+            </li>
+        </ul>
+    </header>
+
+    <main class="main">
+        <div class="event-grid">
+            <div class="railmap">
+                <div class="railmap-input railmap-filter">
+                    <select id="filter">
+                        <option disabled selected>Välj linje..</option>
+                    </select>
+                </div>
+
+                <div class="railmap-events hidden">
+                    <h3>Events på <span id="cur_line"></span></h3>
+                    <div class="railmap-events-list-outer">
+                        <div class="railmap-events-list">
+                            <!--article class="event">
+                                <h4 class="event-title">Lorem Ipsum</h4>
+                                <p class="event-date">
+                                    <time datetime="2025-01-01T10:00:00+01:00">2025-01-01 10:00</time>
+                                    -
+                                    <time datetime="2025-01-01T10:00:00+01:00">11:00</time>
+                                </p>
+                                <p class="event-relative-time">
+                                    om 2 timmar
+                                </p>
+                            </article-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="section-arrangers">
+                <h3>Vi som arrangerar</h3>
+
+                <div class="arrangers">
+                    <article class="arranger">
+                        <img alt="Lorem Ipsumsson" class="arranger-img" src="https://picsum.photos/800/600">
+                        <h3 class="arranger-name">Lorem Ipsumsson</h3>
+                        <p class="arranger-title">Event Manager</p>
+                    </article>
+                    <article class="arranger">
+                        <img alt="Lorem Ipsumsson" class="arranger-img" src="https://picsum.photos/800/600">
+                        <h3 class="arranger-name">Lorem Ipsumsson</h3>
+                        <p class="arranger-title">Event Manager</p>
+                    </article>
+                    <article class="arranger">
+                        <img alt="Lorem Ipsumsson" class="arranger-img" src="https://picsum.photos/800/600">
+                        <h3 class="arranger-name">Lorem Ipsumsson</h3>
+                        <p class="arranger-title">Event Manager</p>
+                    </article>
+                    <article class="arranger">
+                        <img alt="Lorem Ipsumsson" class="arranger-img" src="https://picsum.photos/800/600">
+                        <h3 class="arranger-name">Lorem Ipsumsson</h3>
+                        <p class="arranger-title">Event Manager</p>
+                    </article>
+                    <article class="arranger">
+                        <img alt="Lorem Ipsumsson" class="arranger-img" src="https://picsum.photos/800/600">
+                        <h3 class="arranger-name">Lorem Ipsumsson</h3>
+                        <p class="arranger-title">Event Manager</p>
+                    </article>
+                    <article class="arranger">
+                        <img alt="Lorem Ipsumsson" class="arranger-img" src="https://picsum.photos/800/600">
+                        <h3 class="arranger-name">Lorem Ipsumsson</h3>
+                        <p class="arranger-title">Event Manager</p>
+                    </article>
+                </div>
+            </section>
+            <div class="arranger-form">
+                <section class="form-arrange">
+                    <h3>Anmäl dig som arrangör!</h3>
+                    <p>
+                        Om du är intresserad av SL är du precis den vi behöver
+                        i events-gruppen! Att arrangera events är extremt
+                        lärorikt och en bra resurs för CV:t!
+                    </p>
+                    <form action="register_arrange" method="post">
+                        <p>
+                            <label for="arr_name">Namn:</label>
+                            <input type="text" id="arr_name" name="name" required>
+                            <span class="clr-red">*</span>
+                        </p>
+                        <p>
+                            <label for="arr_mail">Email:</label>
+                            <input type="email" id="arr_mail" name="mail" required>
+                            <span class="clr-red">*</span>
+                        </p>
+                        <p>
+                            <label for="arr_text">
+                                Är det något vi bör veta om dig?
+                            </label>
+                            <br>
+                            <textarea id="arr_text" name="text"></textarea>
+                        </p>
+                        <input type="submit" value="Skriv upp mig!">
+                    </form>
+                </section>
+                <section class="form-donate">
+                    <h3>Skänk en slant!</h3>
+                    <p><b>Swish:</b> 076 917 20 53</p>
+                    <p><b>Bankgiro:</b> 1234-5678</p>
+                </section>
+            </div>
+            </div>
+            <aside class="events">
+                <h2>Kommande events</h2>
+                <div id="aside_events"></div>
+            <button>
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-above">
+            <section class="sitemap">
+                <h3>SL-spotting</h3>
+                <ul>
+                    <li><a href=".">Hem</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="history.html">SL:s historia</a></li>
+                    <li><a href="membership.html">Bli medlem</a></li>
+                </ul>
+            </section>
+            <section class="newsletter">
+                <h3>Nyhetsbrev</h3>
+                <form method="POST" action="newsletter_register">
+                    <label for="email">Skriv upp dig på vårt nyhetsbrev:</label>
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="E-post" required>
+                    <input type="hidden" name="prev" id="prev">
+                    <script>document.querySelector("#prev").value = document.location.href;</script>
+                    <input type="submit" value="Registrera dig!">
+                </form>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Officia maxime obcaecati voluptate accusantium atque quaerat
+                    voluptatum esse eligendi ratione dignissimos commodi placeat
+                    ex, nihil nulla ullam tempora nisi. Velit, vitae.</p>
+            </section>
+        </div>
+
+        <div class="legal">
+            <p>&copy; 2025 FRISK</p>
+            <p>
+                <a href="javascript:document.getElementById('integrity').showModal()">
+                    Integritetspolicy
+                </a>
+            </p>
+            <p>
+                <a href="javascript:document.getElementById('terms').showModal()">
+                    Användarvillkor
+                </a>
+            </p>
+            <dialog id="integrity">
+                <form method="dialog"><input type="submit" value="X"></form>
+                <p>
+                    Lorem?
+                </p>
+            </dialog>
+            <dialog id="terms">
+                <form method="dialog"><input type="submit" value="X"></form>
+                <p>
+                    Lorem?
+                </p>
+            </dialog>
+        </div>
+    </footer>
+
+    <script src="js/events.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>SL-spotting | Hem</title>
+</head>
+
+<body>
+    <header class="header">
+        <a class="linker" href=".">
+            <div class="header-title">
+                <div class="header-logo">
+                    <img alt="Logga" src="https://picsum.photos/128">
+                </div>
+
+                <h1 class="header-title-text">SL-spotting</h1>
+            </div>
+        </a>
+
+        <input id="header_nav_toggle" type="checkbox">
+        <label class="header_nav_btn" for="header_nav_toggle">
+            <span></span>
+        </label>
+        <ul class="header-nav">
+            <li class="header-link btn">
+                <a href=".">Hem</a>
+            </li>
+            <li class="header-link btn">
+                <a href="events.html">Events</a>
+            </li>
+            <li class="header-link btn">
+                <a href="history.html">Historia</a>
+            </li>
+            <li class="header-link btn btn-login">
+                <a href="javascript:loginModal()">Logga in</a>
+            </li>
+            <li class="header-link btn btn-join">
+                <a href="membership.html">Gå med</a>
+            </li>
+        </ul>
+    </header>
+
+    <main class="main">
+        <section class="section-intro">
+            <h2>Förbundet för Region Stockholms kollektivtrafik</h2>
+            <p>
+                Vi är en ideell förening som arbetar för att främja och bevara
+                intresset för kollektivtrafik i Stockholm. På fritiden är vi
+                SL-spotters och åker gärna på resor med SL:s fordon. Välkommen
+                till SL-spottings webbsida!
+            </p>
+
+            <ul class="intro-btns">
+                <li class="btn btn-join">
+                    <a href="membership.html">Gå med</a>
+                </li>
+                <li class="btn btn-login">
+                    <a href="javascript:loginModal()">Logga in</a>
+                </li>
+            </ul>
+        </section>
+
+        <div class="section-features">
+            <a class="feature-linker" href="events.html">
+                <article class="feature">
+                    <div class="feature-inner">
+                        <h2 class="feature-header">Events</h2>
+                        <p class="feature-text">
+                            Vad händer i SL-världen? Här kan du se alla våra
+                            kommande events och när de inträffar.
+                        </p>
+                        <p class="feature-link">
+                            Läs mer
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a class="feature-linker" href="membership.html">
+                <article class="feature">
+                    <div class="feature-inner">
+                        <h2 class="feature-header">Medlemskap</h2>
+                        <p class="feature-text">
+                            Bli medlem! Lätt som en plätt - fyll i formuläret och
+                            skicka in så kan du räkna dig själv som medlem i
+                            FRISK.
+                        </p>
+                        <p class="feature-link">
+                            Till formuläret
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a class="feature-linker" href="history.html">
+                <article class="feature">
+                    <div class="feature-inner">
+                        <h2 class="feature-header">Historia</h2>
+                        <p class="feature-text">
+                            Hur såg SL ut förr? Här kan du läsa om SL:s historia och
+                            hur det har utvecklats genom åren (och hur SL-spotting såg
+                            ut förr)!
+                        </p>
+                        <p class="feature-link">
+                            Läs mer
+                        </p>
+                    </div>
+                </article>
+            </a>
+        </div>
+
+        <section class="section-gallery">
+            <h2>Vår verksamhet i bilder</h2>
+            <div class="gallery">
+                <div class="gallery-item gallery-item-a">
+                    <picture>
+                        <source 
+                           media="(min-width: 1600px)"
+                           srcset="https://picsum.photos/1440/1080">
+                        <source 
+                           media="(min-width: 1000px)"
+                           srcset="https://picsum.photos/720/540">
+                        <img alt="Bild 1" src="https://picsum.photos/360/270">
+                     </picture>
+                </div>
+                <div class="gallery-item gallery-item-b">
+                    <picture>
+                        <source 
+                           media="(min-width: 1600px)"
+                           srcset="https://picsum.photos/1440/1080">
+                        <source 
+                           media="(min-width: 1000px)"
+                           srcset="https://picsum.photos/720/540">
+                        <img alt="Bild 2" src="https://picsum.photos/360/270">
+                     </picture>
+                </div>
+                <div class="gallery-item gallery-item-c">
+                    <picture>
+                        <source 
+                           media="(min-width: 1600px)"
+                           srcset="https://picsum.photos/1440/1080">
+                        <source 
+                           media="(min-width: 1000px)"
+                           srcset="https://picsum.photos/720/540">
+                        <img alt="Bild 3" src="https://picsum.photos/360/270">
+                     </picture>
+                </div>
+                <div class="gallery-item gallery-item-d">
+                    <picture>
+                        <source 
+                           media="(min-width: 1600px)"
+                           srcset="https://picsum.photos/1440/1080">
+                        <source 
+                           media="(min-width: 1000px)"
+                           srcset="https://picsum.photos/720/540">
+                        <img alt="Bild 4" src="https://picsum.photos/360/270">
+                     </picture>
+                </div>
+                <div class="gallery-item gallery-item-e">
+                    <picture>
+                        <source 
+                           media="(min-width: 1600px)"
+                           srcset="https://picsum.photos/1440/1080">
+                        <source 
+                           media="(min-width: 1000px)"
+                           srcset="https://picsum.photos/720/540">
+                        <img alt="Bild 5" src="https://picsum.photos/360/270">
+                     </picture>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-above">
+            <section class="sitemap">
+                <h3>SL-spotting</h3>
+                <ul>
+                    <li><a href=".">Hem</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="history.html">SL:s historia</a></li>
+                    <li><a href="membership.html">Bli medlem</a></li>
+                </ul>
+            </section>
+            <section class="newsletter">
+                <h3>Nyhetsbrev</h3>
+                <form method="POST" action="newsletter_register">
+                    <label for="email">Skriv upp dig på vårt nyhetsbrev:</label>
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="E-post" required>
+                    <input type="hidden" name="prev" id="prev">
+                    <script>document.querySelector('#prev').value = document.location.href;</script>
+                    <input type="submit" value="Registrera dig!">
+                </form>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Officia maxime obcaecati voluptate accusantium atque quaerat
+                    voluptatum esse eligendi ratione dignissimos commodi placeat
+                    ex, nihil nulla ullam tempora nisi. Velit, vitae.</p>
+            </section>
+        </div>
+
+        <div class="legal">
+            <p>&copy; 2025 FRISK</p>
+            <p>
+                <a href="javascript:document.getElementById('integrity').showModal()">
+                    Integritetspolicy
+                </a>
+            </p>
+            <p>
+                <a href="javascript:document.getElementById('terms').showModal()">
+                    Användarvillkor
+                </a>
+            </p>
+            <dialog id="integrity">
+                <form method="dialog"><input type="submit" value="X"></form>
+                <p>
+                    Lorem?
+                </p>
+            </dialog>
+            <dialog id="terms">
+                <form method="dialog"><input type="submit" value="X"></form>
+                <p>
+                    Lorem?
+                </p>
+            </dialog>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
