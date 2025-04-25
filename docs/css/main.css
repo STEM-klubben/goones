@@ -1,0 +1,91 @@
+body {
+    background-image: url("../img/GOONES.jpg");
+    /*gör att bakgrunden täcks av bilden*/
+    background-size: cover;
+    /*Bara en bild*/
+    background-repeat: no-repeat;
+    /*Bakgrundsbilden sitter still när man skrollar*/
+    background-attachment: fixed;
+    /*sätter bakgrunsbolden i mitten så ponti alltid syns.*/
+    background-position: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+header, footer {
+    background-color: #23262c;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+    margin: 0;
+    background-color:#32353b;
+    color: #fafafa;
+    border-radius: 15px;
+    padding: 10px;
+    margin: -20px;
+}
+
+.no-link {
+    cursor: not-allowed;
+    color: red;
+}
+
+nav {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav>* {
+    margin: auto 25px;
+}
+
+section {
+    background-color: #32353b;
+    padding: 20px;
+    margin: 60px auto;
+    width: 80%;
+    border-radius: 15px;
+    max-width: 900px;
+    color: #fafafa;
+}
+
+
+
+a {
+    color: yellow;
+}
+
+li {
+    margin: 20px 0px;
+}
+
+li,p {
+    color: cyan;
+}
+
+p {
+    text-align:justify;
+}
+
+footer nav {
+    margin: 0;
+}
+footer {
+    padding: 0;
+    display:flex;
+    justify-content: space-between;
+}
+
+.footer-side {
+    width: 120px;
+    margin: auto 10px;
+}

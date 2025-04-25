@@ -1,0 +1,39 @@
+@import "main.css";
+
+.stil-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(60px auto);
+    grid-template-areas: 
+    "m m"
+    "l f";
+}
+
+@media screen and (max-width: 700px){
+    .stil-1 {
+        grid-template-rows: repeat(60px auto auto);
+        grid-template-areas: 
+        "m m"
+        "l l"
+        "f f";
+    }
+}
+
+.stil-1-text {
+    grid-area: m;
+}
+
+.stil-1-bild {
+    grid-area: f;
+    margin-left: 4px;
+}
+
+.stil-1-lista {
+    grid-area: l;
+}
+
+.stil-1-avslut {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
