@@ -21,7 +21,7 @@
     border: 0;
 }
 
-#wakamole {
+.game-button {
     font: inherit;
     background-color: black;
     color: white;
@@ -32,6 +32,6 @@
     cursor: pointer;
 }
 
-#wakamole:hover {
+.game-button:hover {
     color: yellow;
 }
