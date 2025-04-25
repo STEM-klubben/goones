@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goones - Spel</title>
-
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/mongo.css">
+    <link rel="stylesheet" href="css/spel.css">
 </head>
 
 <body>
+
+    <dialog>
+        <button onclick="dialog.close();" id="kai"><img src="img/brainrotkai.webp" alt=""></button>
+    </dialog>
 
     <header>
         <h1>GOONES.SE</h1>
@@ -25,7 +27,12 @@
     </header>
 
     <main>
-       
+        <section>
+            <h2>Wakamole</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In voluptatum atque itaque, mollitia eos molestiae minus, quibusdam dolores aliquid minima quaerat aperiam unde consequuntur accusamus ea tenetur, quas ut voluptas.</p>
+            <button class="game-button" data-is-active="false" id="wakamole" onclick="hannesreklamFUNC(); changeStatus(this);">SPELA WAKAMOLE<span class="status"></span></button>
+            
+        </section>
     </main>
 
     <footer>
@@ -44,5 +51,6 @@
 
 </body>
 <script src="js/brainrot.js"></script>
+<script src="js/spel.js"></script>
 
 </html>

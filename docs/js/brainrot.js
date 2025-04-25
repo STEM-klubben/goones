@@ -1,5 +1,6 @@
 // Select the dialog element
 const dialog = document.querySelector('dialog');
+const kai = document.querySelector('kai');
 let hannesReklam = false;
 
 function hannesreklamFUNC() {
@@ -24,6 +25,6 @@ function showDialog() {
 setInterval(showDialog, 600);
 
 // Optional: Close the dialog when clicked
-dialog.addEventListener('click', () => {
+kai.addEventListener('click', () => {
     dialog.close();
 });
