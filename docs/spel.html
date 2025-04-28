@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goones - Spel</title>
     <link rel="stylesheet" href="css/spel.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
 </head>
 
 <body>
@@ -33,6 +34,31 @@
             <button class="game-button" data-is-active="false" id="wakamole" onclick="hannesreklamFUNC(); changeStatus(this);">SPELA WAKAMOLE<span class="status"></span></button>
             
         </section>
+
+        <section>
+            <h2>Snake</h2>
+            <p id="tra">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In voluptatum atque itaque, mollitia eos molestiae minus, quibusdam dolores aliquid minima quaerat aperiam unde consequuntur accusamus ea tenetur, quas ut voluptas.</p>
+            <button class="game-button" data-is-active="false" id="snake" onclick="switchSnake(); changeStatus(this);">VISA SNAKE<span class="status"></span></button>
+            <div class="spread" id="snake-canvas-holder">
+                <form id="snake-form">
+                    <div class="spread question">
+                        <label for="snake-form-size">Spelbredd</label>
+                        <input type="number" name="start" id="snake-form-size" placeholder="10" value="10">
+                    </div>
+                    <div class="spread question">
+                        <label for="snake-form-speed">Hastighet</label>
+                        <input type="number" name="start" id="snake-form-speed" placeholder="2" value="2">
+                    </div>
+                    <div class="spread question">
+                        <label for="snake-form-start-apples">Startäpplen</label>
+                        <input type="number" name="start" id="snake-form-start-apples" placeholder="3" value="3">
+                    </div>
+                    <button type="button" class="game-button" onclick="game.over(); game.on = true; game.boardSize = document.getElementById('snake-form-size').value; snake.speed = 1/document.getElementById('snake-form-speed').value; document.getElementById('snake-form-size').value; game.startApples = document.getElementById('snake-form-start-apples').value; apples = []; snake.blocks = []; setup();">KÖR</button>
+                    <h3>Runs</h3>
+                    <ol id="highscore"></ol>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -52,5 +78,6 @@
 </body>
 <script src="js/brainrot.js"></script>
 <script src="js/spel.js"></script>
+<script src="js/snake.js"></script>
 
 </html>
