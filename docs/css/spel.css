@@ -1,5 +1,10 @@
 @import "main.css";
 
+dialog {
+    position: absolute;
+    padding: 0;
+}
+
 .status {
     background-color: red;
     width: 10px;
@@ -11,8 +16,8 @@
 }
 
 #kai>* {
-    width: 360px;
-    height: 360px;
+    width: 180px;
+    height: 180px;
 }
 
 #kai {
