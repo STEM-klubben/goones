@@ -1,0 +1,71 @@
+@import "main.css";
+
+dialog {
+    position: absolute;
+    padding: 0;
+}
+
+.status {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 1px;
+    margin-left: 10px;
+}
+
+#kai>* {
+    width: 180px;
+    height: 180px;
+}
+
+#kai {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.game-button {
+    font: inherit;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 2px 1px 5px white;
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.game-button:hover {
+    color: yellow;
+}
+
+#snake-canvas-holder {
+    margin-top: 10px;
+    display: none;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: row-reverse;
+    flex: 1 1 200px;
+}
+
+.question>input {
+    max-width: 40px;
+}
+
+#snake-form {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#snake-form>ol {
+    margin: 0;
+    height: 215px;
+}
+
+#highscore {
+    overflow: hidden scroll;
+}
