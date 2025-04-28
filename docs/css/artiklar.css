@@ -37,3 +37,38 @@
     justify-content: space-between;
     width: 100%;
 }
+
+.stil-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(60px auto);
+    grid-template-areas: 
+    "m m"
+    "l f";
+}
+
+@media screen and (max-width: 700px){
+    .stil-2 {
+        grid-template-rows: repeat(60px auto auto);
+        grid-template-areas: 
+        "m m"
+        "l l"
+        "f f";
+    }
+}
+
+.stil-2-text {
+    grid-area: m;
+}
+
+.stil-2-nedre-text {
+    grid-area: l;
+    margin: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.stil-2-bild {
+    grid-area: f;
+    margin-left: 4px;
+}
