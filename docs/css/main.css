@@ -89,3 +89,8 @@ footer {
     width: 120px;
     margin: auto 10px;
 }
+
+.spread {
+    display: flex;
+    justify-content: space-between;
+}

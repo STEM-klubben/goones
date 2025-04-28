@@ -35,3 +35,32 @@
 .game-button:hover {
     color: yellow;
 }
+
+#snake-canvas-holder {
+    margin-top: 10px;
+    display: none;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: row-reverse;
+    flex: 1 1 200px;
+}
+
+.question>input {
+    max-width: 40px;
+}
+
+#snake-form {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#snake-form>ol {
+    margin: 0;
+    height: 215px;
+}
+
+#highscore {
+    overflow: hidden scroll;
+}
