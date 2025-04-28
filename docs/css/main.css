@@ -88,4 +88,21 @@ footer {
 .footer-side {
     width: 120px;
     margin: auto 10px;
+    text-align: center;
+}
+
+.spread {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:770px) {
+    /*respo, ändrar margin*/
+    footer>nav>* {
+        margin: 5px;
+    }
+
+    .footer-side {
+        margin: auto 2px;
+    }
 }
