@@ -1,0 +1,13 @@
+{% extends "base.html.j2" %}
+
+{% block title %}GOONES.SE - {{ article }}{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/artiklar.css">
+{% endblock head %}
+
+{% block content %}
+    <main>
+        {% include "articles/" + article + ".html.j2" %}
+    </main>
+{% endblock content %}
