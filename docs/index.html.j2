@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="sv">
+{% extends "base.html.j2" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goones</title>
+{% block title %}Goones{% endblock title %}
 
+{% block head %}
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/mongo.css">
-</head>
+{% endblock head %}
 
-<body>
-
-    <header>
-        <h1>GOONES.SE</h1>
-        <nav>
-            <a href="index.html">Hem</a>
-            <a href="artiklar.html">Artiklar</a>
-            <a class="no-link" href="">Resurser</a>
-            <a href="spel.html">Spel</a>
-            <a class="no-link" href="">Om oss</a>
-        </nav>
-
-    </header>
-
+{% block content %}
     <main>
-
         <section>
             <h2>Välkommen!</h2>
             <h3>Visionen</h3>
@@ -90,26 +72,12 @@
                     target="blank_">Galoppfältet</a>
                 och lägg dina donationer i en burk märkt med "Goones" under papperskorgen närmast utgången av stationen.
             </p>
-            <p>Tack till alla som väljer att donera till oss, det uppskattas mycket! &#129297</p>
+            <p>Tack till alla som väljer att donera till oss, det uppskattas mycket! &#129297;</p>
 
         </section>
     </main>
+{% endblock content %}
 
-    <footer>
-        <p class="footer-side">&copyGOONES</p>
-        <nav>
-            <a href="index.html">Hem</a>
-            <a href="artiklar.html">Artiklar</a>
-            <a class="no-link" href="">Resurser</a>
-            <a href="spel.html">Spel</a>
-            <a class="no-link" href="">Om oss</a>
-        </nav>
-        <p class="footer-side"><a href="https://youtu.be/dQw4w9WgXcQ?si=UK0M2tEOQbqxEm8v">Användarvillkor</a></p>
-
-    </footer>
-
-
-</body>
-<script src="js/brainrot.js"></script>
-
-</html>
+{% block scripts %}
+    <script src="js/brainrot.js"></script>
+{% endblock scripts %}
