@@ -49,6 +49,15 @@ def games():
 
     return render_template('games.html.j2')
 
+@app.route('/studytips')
+def studytips():
+    """
+    Render the study tips page.
+    :return: Rendered HTML page.
+    """
+
+    return render_template('studytips.html.j2')
+
 @app.route("/css/<path:path>")
 def css(path: str = ""):
     """
