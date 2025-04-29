@@ -1,12 +1,16 @@
 @import "main.css";
 
 .baglun {
-    max-width: 450px;
     animation-name: expands;
     animation-duration: 1000000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
+}
+
+section {
+    /* sätt på om man har flera personers pluggtips
+    max-width: 450px;*/
 }
 
 @keyframes expand {
