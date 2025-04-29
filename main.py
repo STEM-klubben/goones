@@ -40,6 +40,15 @@ def article(name: str = ""):
 
     return render_template('article.html.j2', article=name)
 
+@app.route('/games')
+def games():
+    """
+    Render the games page.
+    :return: Rendered HTML page.
+    """
+
+    return render_template('games.html.j2')
+
 @app.route("/css/<path:path>")
 def css(path: str = ""):
     """
