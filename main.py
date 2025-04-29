@@ -49,6 +49,15 @@ def games():
 
     return render_template('games.html.j2')
 
+@app.route('/studytips')
+def studytips():
+    """
+    Render the study tips page.
+    :return: Rendered HTML page.
+    """
+
+    return render_template('studytips.html.j2')
+
 @app.route("/css/<path:path>")
 def css(path: str = ""):
     """
@@ -77,4 +86,4 @@ def img(path: str = ""):
     return send_from_directory("docs/img", path=path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
