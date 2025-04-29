@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +%s)"
+        run: echo "date=$(date +%s)" >> $GITHUB_OUTPUT  
       - name: Build the Docker image
         run: docker build . --file Dockerfile  --tag ghcr.io/stem-klubben/goones:${{ steps.date.outputs.date }}
       - name: Login to GitHub Container Registry
@@ -44,7 +44,7 @@ jobs:
 
       - name: Add remote server to known_hosts
         run: |
-                    ssh-keyscan goonesdeploy@goones.se >> ~/.ssh/known_hosts
+                    ssh-keyscan goones.se >> ~/.ssh/known_hosts
 
       - name: Deploy to server
         run: |
