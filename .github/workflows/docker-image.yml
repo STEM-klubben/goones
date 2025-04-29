@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-push-image:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     permissions:
       contents: read
       packages: write
@@ -33,7 +33,7 @@ jobs:
         run: docker push ghcr.io/stem-klubben/goones:${{ steps.date.outputs.date }}
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     needs: build-push-image
 
     steps:
