@@ -69,3 +69,15 @@ dialog {
 #highscore {
     overflow: hidden scroll;
 }
+
+/*slots*/
+
+.slot {
+    transform: translate(0, -000px);
+}
+
+.slot-div {
+    width: 154px;
+    height: 154px;
+    
+}
