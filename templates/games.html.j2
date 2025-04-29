@@ -1,38 +1,22 @@
-<!DOCTYPE html>
-<html lang="sv">
+{% extends "base.html.j2" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goones - Spel</title>
+{% block title %}Goones - Spel{% endblock title %}
+
+{% block head %}
     <link rel="stylesheet" href="css/spel.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-</head>
+{% endblock head %}
 
-<body>
-
-    <dialog>
-        <button onclick="dialog.close();" id="kai"><img src="img/brainrotkai.webp" alt=""></button>
-    </dialog>
-
-    <header>
-        <h1>GOONES.SE</h1>
-        <nav>
-            <a href="index.html">Hem</a>
-            <a href="artiklar.html">Artiklar</a>
-            <a class="no-link" href="">Resurser</a>
-            <a href="spel.html">Spel</a>
-            <a href="pluggtips.html">Pluggtips</a>
-        </nav>
-        
-    </header>
+{% block content %}
 
     <main>
+        <dialog>
+            <button onclick="dialog.close();" id="kai"><img src="img/brainrotkai.webp" alt=""></button>
+        </dialog>
         <section>
             <h2>Wakamole</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In voluptatum atque itaque, mollitia eos molestiae minus, quibusdam dolores aliquid minima quaerat aperiam unde consequuntur accusamus ea tenetur, quas ut voluptas.</p>
             <button class="game-button" data-is-active="false" id="wakamole" onclick="hannesreklamFUNC(); changeStatus(this);">SPELA WAKAMOLE<span class="status"></span></button>
-            
         </section>
 
         <section>
@@ -61,23 +45,4 @@
         </section>
     </main>
 
-    <footer>
-        <p class="footer-side">&copyGOONES</p>
-        <nav>
-            <a href="index.html">Hem</a>
-            <a href="artiklar.html">Artiklar</a>
-            <a class="no-link" href="">Resurser</a>
-            <a href="spel.html">Spel</a>
-            <a href="pluggtips.html">Pluggtips</a>
-        </nav>
-        <p class="footer-side"><a href="https://youtu.be/dQw4w9WgXcQ?si=UK0M2tEOQbqxEm8v">Användarvillkor</a></p>
-
-    </footer>
-
-
-</body>
-<script src="js/brainrot.js"></script>
-<script src="js/spel.js"></script>
-<script src="js/snake.js"></script>
-
-</html>
+{% endblock content %}

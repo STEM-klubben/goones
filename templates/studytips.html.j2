@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html.j2" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/pluggtips.css">
-</head>
+{% block title %}Pluggtips{% endblock title %}
 
-<body>
-    <header>
-        <h1>GOONES.SE</h1>
-        <nav>
-            <a href="index.html">Hem</a>
-            <a href="artiklar.html">Artiklar</a>
-            <a class="no-link" href="">Resurser</a>
-            <a href="spel.html">Spel</a>
-            <a href="pluggtips.html">Pluggtips</a>
-        </nav>
+{% block head %}
+    <link rel="stylesheet" href="/css/pluggtips.css">
+{% endblock head %}
 
-    </header>
+{% block content %}
 
     <main>
         <section class="baglun">
@@ -75,19 +62,4 @@
 
         </section>
     </main>
-
-    <footer>
-        <p class="footer-side">&copyGOONES</p>
-        <nav>
-            <a href="index.html">Hem</a>
-            <a href="artiklar.html">Artiklar</a>
-            <a class="no-link" href="">Resurser</a>
-            <a href="spel.html">Spel</a>
-            <a href="pluggtips.html">Pluggtips</a>
-        </nav>
-        <p class="footer-side"><a href="https://youtu.be/dQw4w9WgXcQ?si=UK0M2tEOQbqxEm8v">Användarvillkor</a></p>
-
-    </footer>
-</body>
-
-</html>
+{% endblock content %}
