@@ -89,3 +89,7 @@ dialog {
     height: 462px;
     margin: 0 auto;
 }
+
+#slot-controls {
+    padding: 10px 30px;
+}
