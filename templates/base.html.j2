@@ -2,7 +2,7 @@
     {% block title %}{% endblock title %}
 {%- endmacro -%}
 {%- macro img() -%}
-    {% block img %}{% endblock img %}
+    {% block img %}/img/thumb/thumbnail.png{% endblock img %}
 {%- endmacro -%}
 {%- macro description() -%}
     {% block description %}{% endblock description %}
@@ -28,14 +28,14 @@
     <meta name='og:site_name' content='Goones'>
     <meta name='og:description' content='{{ description() }}'>
 
-    <meta name="apple-mobile-web-app-title" content="{{ title()}}">
+    <meta name="apple-mobile-web-app-title" content="{{ title() }}">
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-mobile-web-app-status-bar-style' content='black'>
 
-    <link href='/img/apple/apple-touch-icon.png' rel='apple-touch-icon' type='image/png'>
-    <link href='/img/apple/touch-icon-ipad.png' rel='apple-touch-icon' sizes='72x72'>
-    <link href='/img/apple/startup.png' rel='apple-touch-startup-image'>
+    <link href='/img/thumb/apple-touch-icon.png' rel='apple-touch-icon' type='image/png'>
+    <link href='/img/thumb/touch-icon-ipad.png' rel='apple-touch-icon' sizes='72x72'>
+    <link href='/img/thumb/startup.png' rel='apple-touch-startup-image'>
 </head>
 
 <body>
