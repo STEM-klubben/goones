@@ -1,12 +1,41 @@
+{%- macro title() -%}
+    {% block title %}{% endblock title %}
+{%- endmacro -%}
+{%- macro img() -%}
+    {% block img %}{% endblock img %}
+{%- endmacro -%}
+{%- macro description() -%}
+    {% block description %}{% endblock description %}
+{%- endmacro -%}
 <!DOCTYPE html>
 <html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ title }}{% endblock title %}</title>
+    <title>{{ title() }}</title>
 
     {% block head %}{% endblock head %}
+
+    <meta name='keywords' content='goones, {{ title() }}'>
+    <meta name='description' content='{{ description() }}'>
+    <meta name='author' content='STEM-klubben'>
+
+    <meta name='og:title' content='{{ title() }}'>
+    <meta name='og:type' content='website'>
+    <meta name='og:url' content='{{ url }}'>
+    <meta name='og:image' content='{{ img() }}'>
+    <meta name='og:site_name' content='Goones'>
+    <meta name='og:description' content='{{ description() }}'>
+
+    <meta name="apple-mobile-web-app-title" content="{{ title()}}">
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+
+    <link href='/img/apple/apple-touch-icon.png' rel='apple-touch-icon' type='image/png'>
+    <link href='/img/apple/touch-icon-ipad.png' rel='apple-touch-icon' sizes='72x72'>
+    <link href='/img/apple/startup.png' rel='apple-touch-startup-image'>
 </head>
 
 <body>

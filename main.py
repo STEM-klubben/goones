@@ -5,6 +5,7 @@ from flask import render_template, send_from_directory
 
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+BASE_URL = "https://goones.se"
 app = Flask(__name__)
 
 app.wsgi_app = ProxyFix(
@@ -19,7 +20,7 @@ def index():
     :return: Rendered HTML page.
     """
 
-    return render_template('index.html.j2')
+    return render_template('index.html.j2', url=f"{BASE_URL}")
 
 @app.route('/articles')
 def articles():
@@ -28,7 +29,7 @@ def articles():
     :return: Rendered HTML page.
     """
 
-    return render_template('articles.html.j2')
+    return render_template('articles.html.j2', url=f"{BASE_URL}/articles")
 
 @app.route('/articles/<name>')
 def article(name: str = ""):
@@ -38,7 +39,7 @@ def article(name: str = ""):
     :return: Rendered HTML page.
     """
 
-    return render_template('article.html.j2', article=name)
+    return render_template('article.html.j2', article=name, url=f"{BASE_URL}/articles/{name}")
 
 @app.route('/games')
 def games():
@@ -47,7 +48,7 @@ def games():
     :return: Rendered HTML page.
     """
 
-    return render_template('games.html.j2')
+    return render_template('games.html.j2', url=f"{BASE_URL}/games")
 
 @app.route('/studytips')
 def studytips():
@@ -56,7 +57,7 @@ def studytips():
     :return: Rendered HTML page.
     """
 
-    return render_template('studytips.html.j2')
+    return render_template('studytips.html.j2', url=f"{BASE_URL}/studytips")
 
 @app.route("/css/<path:path>")
 def css(path: str = ""):
