@@ -69,3 +69,27 @@ dialog {
 #highscore {
     overflow: hidden scroll;
 }
+
+/*slots*/
+
+.slot {
+    transform: translate(0, -154px);
+}
+
+.slot-div {
+    width: 154px;
+    height: 462px;
+    overflow: hidden;
+}
+
+#slot-container {
+    display: flex;
+    flex-direction: row;
+    width: 770px;
+    height: 462px;
+    margin: 0 auto;
+}
+
+#slot-controls {
+    padding: 10px 30px;
+}
