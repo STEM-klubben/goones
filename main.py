@@ -86,5 +86,14 @@ def img(path: str = ""):
 
     return send_from_directory("docs/img", path=path)
 
+@app.route("/favicon.ico")
+def favicon():
+    """
+    Favicon.
+    :return: Favicon file.
+    """
+
+    return send_from_directory("docs/img", path="favicon.ico")
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
