@@ -1,12 +1,42 @@
+{%- macro title() -%}
+    {% block title %}{% endblock title %}
+{%- endmacro -%}
+{%- macro img() -%}
+    {% block img %}/img/thumb/thumbnail.png{% endblock img %}
+{%- endmacro -%}
+{%- macro description() -%}
+    {% block description %}{% endblock description %}
+{%- endmacro -%}
 <!DOCTYPE html>
 <html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ title }}{% endblock title %}</title>
+    <title>{{ title() }}</title>
 
     {% block head %}{% endblock head %}
+
+    <link rel="icon" type="image/png" href="/img/thumb/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/thumb/favicon.svg" />
+    <link rel="shortcut icon" href="/img/thumb/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/thumb/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="{{ title() }}">
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <link rel="manifest" href="/img/thumb/site.webmanifest" />
+
+    <meta name='keywords' content='goones, {{ title() }}'>
+    <meta name='description' content='{{ description() }}'>
+    <meta name='author' content='STEM-klubben'>
+
+    <meta name='og:title' content='{{ title() }}'>
+    <meta name='og:type' content='website'>
+    <meta name='og:url' content='{{ url }}'>
+    <meta name='og:image' content='{{ img() }}'>
+    <meta name='og:site_name' content='Goones'>
+    <meta name='og:description' content='{{ description() }}'>
 </head>
 
 <body>
