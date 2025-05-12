@@ -1,5 +1,4 @@
 var snakeIsOn = false;
-let spinTime = 1;
 
 function changeStatus (game) {
     let newStatus = (game.dataset.isActive != "true");
@@ -40,11 +39,17 @@ function updateHighscore () {
 
 //slots
 let scrolls = [];
+let isInstant = false;
 let spinCounts = [0];
 let speed = 0.1;
 function scrollSlots (element, target, scrollID) {
     element.dataset.offset = Math.round((parseFloat(element.dataset.offset) + speed) % 16 * 10000)/10000;
     element.style.transform = "translate(0," + String((parseFloat(element.dataset.offset)+2)*(154)-2772) + "px)";
+
+    //for instant
+    if (isInstant) {
+        element.dataset.offset = target;
+    }
 
     if (parseFloat(element.dataset.offset) == target) {
         if (spinCounts[scrollID] <= 0) {
@@ -63,7 +68,7 @@ function randomAll (spins) {
         spinCounts = [];
         for (let i = 0; i < 5; i++) {
             scrolls.push(setInterval(scrollSlots, 1, document.getElementById(i), Math.round(Math.random()*15), i));
-            spinCounts.push((spins + i)*spinTime);
+            spinCounts.push(spins + i);
         }
     }
 }
