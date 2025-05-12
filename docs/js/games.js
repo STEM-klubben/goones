@@ -39,19 +39,25 @@ function updateHighscore () {
 
 //slots
 let scrolls = [];
+let isInstant = false;
 let spinCounts = [0];
 let speed = 0.1;
 function scrollSlots (element, target, scrollID) {
     element.dataset.offset = Math.round((parseFloat(element.dataset.offset) + speed) % 16 * 10000)/10000;
     element.style.transform = "translate(0," + String((parseFloat(element.dataset.offset)+2)*(154)-2772) + "px)";
 
+    //for instant
+    if (isInstant) {
+        element.dataset.offset = target;
+    }
+
     if (parseFloat(element.dataset.offset) == target) {
-        spinCounts[scrollID]--;
         if (spinCounts[scrollID] <= 0) {
             clearInterval(scrolls[scrollID]);
             element.dataset.offset = target;
             element.style.transform = "translate(0," + String((parseFloat(element.dataset.offset)+2)*(154)-2772) + "px)";
         }
+        spinCounts[scrollID]--;
     }
 }
 
