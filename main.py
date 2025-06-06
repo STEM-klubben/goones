@@ -12,6 +12,15 @@ app.wsgi_app = ProxyFix(
     app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
 )
 
+@app.route('/health')
+def health():
+    """
+    Health check endpoint.
+    :return: A simple message indicating the service is running.
+    """
+
+    return "Application is active", 200
+
 @app.route('/')
 @app.route('/index.html')
 def index():
