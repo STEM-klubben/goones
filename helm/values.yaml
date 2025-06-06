@@ -1,3 +1,4 @@
+replicas: 3
 containerPort: 80
 dockerConfigJson:
   secretName: dockerconfigjson
