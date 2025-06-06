@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - main
-      - k8s-deploy
   workflow_dispatch:
 
 jobs:

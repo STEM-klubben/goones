@@ -19,7 +19,13 @@ def health():
     :return: A simple message indicating the service is running.
     """
 
-    return "Application is active", 200
+    # No cache
+    headers = {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0"
+    }
+    return "Application is healthy", 200, headers
 
 @app.route('/')
 @app.route('/index.html')
