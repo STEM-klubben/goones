@@ -8,7 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-
+    permissions:
+      contents: read
+      packages: write
+    
     steps:
       - id: lower-repo
         name: Repository to lowercase
