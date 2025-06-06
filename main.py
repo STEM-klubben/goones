@@ -1,15 +1,14 @@
 """Backend for Goones"""
 
-from flask import Flask
+from flask import Flask, request
 from flask import render_template, send_from_directory
 
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-BASE_URL = "https://goones.se"
 app = Flask(__name__)
 
 app.wsgi_app = ProxyFix(
-    app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+    app.wsgi_app, x_for=2, x_proto=2, x_host=2, x_prefix=2
 )
 
 @app.route('/health')
@@ -35,7 +34,7 @@ def index():
     :return: Rendered HTML page.
     """
 
-    return render_template('index.html.j2', url=f"{BASE_URL}")
+    return render_template('index.html.j2')
 
 @app.route('/articles')
 def articles():
@@ -44,7 +43,7 @@ def articles():
     :return: Rendered HTML page.
     """
 
-    return render_template('articles.html.j2', url=f"{BASE_URL}/articles")
+    return render_template('articles.html.j2')
 
 @app.route('/articles/<name>')
 def article(name: str = ""):
@@ -54,7 +53,7 @@ def article(name: str = ""):
     :return: Rendered HTML page.
     """
 
-    return render_template('article.html.j2', article=name, url=f"{BASE_URL}/articles/{name}")
+    return render_template('article.html.j2', article=name)
 
 @app.route('/games')
 def games():
@@ -63,7 +62,7 @@ def games():
     :return: Rendered HTML page.
     """
 
-    return render_template('games.html.j2', url=f"{BASE_URL}/games")
+    return render_template('games.html.j2')
 
 @app.route('/studytips')
 def studytips():
@@ -72,7 +71,7 @@ def studytips():
     :return: Rendered HTML page.
     """
 
-    return render_template('studytips.html.j2', url=f"{BASE_URL}/studytips")
+    return render_template('studytips.html.j2')
 
 @app.route("/css/<path:path>")
 def css(path: str = ""):
