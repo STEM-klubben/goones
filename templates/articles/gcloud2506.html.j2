@@ -1,0 +1,45 @@
+{% extends "articles/base.html.j2" %}
+
+{% block id %}gcloud2506{% endblock id %}
+{% block header %}Google vs Goones: En självklar vinnare!{% endblock header %}
+
+{% block content %}
+                
+    <p class="article-text">
+        Många har noterat det nya problemet angående Google Cloud, att tjänsten har strulat och på så sätt
+        påverkat väldigt många webbplatser i hela världen. En plats som inte påverkas är Goones. Men hur
+        kommer det sig att just Goones klarar sig, men jättar som Snapchat och Youtube blir nästan
+        oanvändbara? Svaret ligger i hur felfritt och säkert Goones.se är jämförelsevis.
+    </p>
+
+    <div class="article-list">
+        <ul>
+            <li>Vi använder Kubernetescluster och Cloudflare som vår DNS-proxy, vilket skyddar oss från DDoS
+            samt tillhandahåller våra filer till ett CDN-nätverk som sträcker sig över hela planeten.</li>
+            <li>Goones är byggt på lokala filer och kommer därmed inte att påverkas av att Googles tjänster
+            fungerar sämre än vanligt.</li>
+        </ul>
+
+        <p class="article-text">
+            Dessa punkter är anledningen till att denna webbplats kan fortsätta vara uppe oavsett hur världsläget
+            ser ut. Kärnvapenattack i Stockholm, inga problem. Asteroidnedslag i Moskva, det skadar inte oss. Vi
+            på Goonesredaktionen hoppas att fler kan vara så säkra som vi är, trots att det kräver lite mer arbete. 
+        </p>
+    </div>
+
+    <div class="article-image">
+        <img src="/img/datacenter1.jpg" alt="En nätverksswitch">
+        <p class="article-credit">
+            <span>
+                Bild: "<a href="https://unsplash.com/photos/blue-utp-cord-40XgDxBfYXM" target="_blank">Blue UTP cord</a>"
+                by
+                <a href="https://www.flickr.com/photos/worldeconomicforum/" target="_blank">Jordan Harrison</a>
+            </span>
+            <span>
+                Skribent: <a href="" class="author">Saxhytt</a> <em>i samråd med redaktionen</em>
+            </span>
+        </p>
+    </div>
+
+{% endblock content %}
+            
