@@ -23,5 +23,20 @@ spec:
           image: {{ .Values.image | required "image is required "}}
           ports:
             - containerPort: {{ .Values.containerPort }}
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.containerPort }}
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.containerPort }}
+            initialDelaySeconds: 10
+            periodSeconds: 20
+            failureThreshold: 5
       imagePullSecrets:
         - name: {{ .Values.dockerConfigJson.secretName }}

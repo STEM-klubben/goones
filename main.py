@@ -8,23 +8,12 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 app = Flask(__name__)
 
 app.wsgi_app = ProxyFix(
-    app.wsgi_app, x_for=2, x_proto=2, x_host=2, x_prefix=2
+    app.wsgi_app, x_for=2, x_proto=1, x_host=1, x_port=1
 )
 
-@app.route('/health')
-def health():
-    """
-    Health check endpoint.
-    :return: A simple message indicating the service is running.
-    """
-
-    # No cache
-    headers = {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Pragma": "no-cache",
-        "Expires": "0"
-    }
-    return "Application is healthy", 200, headers
+@app.route("/healthz")
+def healthz():
+    return "OK", 200
 
 @app.route('/')
 @app.route('/index.html')
