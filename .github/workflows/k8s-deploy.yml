@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build and Push Docker Image
-    runs-on: ubuntu-22.04-arm
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       packages: write
@@ -41,7 +41,7 @@ jobs:
 
   deploy:
     name: Deploy to Kubernetes
-    runs-on: ubuntu-22.04-arm
+    runs-on: ubuntu-22.04
     needs: build
 
     steps:
