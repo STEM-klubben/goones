@@ -1,4 +1,5 @@
 replicas: 3
-containerPort: 80
+containerPort: 5000
+host: Host(`goones.se`)
 dockerConfigJson:
   secretName: dockerconfigjson
