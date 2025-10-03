@@ -5,6 +5,9 @@ from flask import render_template, send_from_directory
 
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+import requests
+from bs4 import BeautifulSoup
+
 app = Flask(__name__)
 
 app.wsgi_app = ProxyFix(
@@ -16,7 +19,6 @@ def healthz():
     return "OK", 200
 
 @app.route('/')
-@app.route('/index.html')
 def index():
     """
     Render the index page.
@@ -61,6 +63,23 @@ def studytips():
     """
 
     return render_template('studytips.html.j2')
+
+@app.route('/lunch')
+def lunch():
+    """
+    Render the lunch page.
+    :return: Rendered HTML page.
+    """
+
+    lunch = requests.get("https://www.tabyenskilda.se/monitor-matsal/").text
+
+    soup = BeautifulSoup(lunch, 'html.parser')
+    lunch = soup.find_all(lambda e: "lunch" in e["class"] if e.has_attr("class") else False)[0].find_all("tr")[1:]
+    lunch = [{"day": item.find_all("td")[0].text.strip(),
+              "veg": item.find_all("td")[1].text.strip(),
+              "meat": item.find_all("td")[2].text.strip()} for item in lunch]
+
+    return render_template('lunch.html.j2', menu_items=lunch)
 
 @app.route("/css/<path:path>")
 def css(path: str = ""):

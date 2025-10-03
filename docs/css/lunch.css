@@ -1,0 +1,18 @@
+@import "main.css";
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: #45474e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}

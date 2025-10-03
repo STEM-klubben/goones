@@ -43,11 +43,12 @@
     <header>
         <h1>GOONES.SE</h1>
         <nav>
-            <a href="/">Hem</a>
-            <a href="/articles">Artiklar</a>
+            <a href="{{ url_for('index') }}">Hem</a>
+            <a href="{{ url_for('articles') }}">Artiklar</a>
             <a href="" class="no-link">Resurser</a>
-            <a href="/games">Spel</a>
-            <a href="/studytips">Pluggtips</a>
+            <a href="{{ url_for('games') }}">Spel</a>
+            <a href="{{ url_for('studytips') }}">Pluggtips</a>
+            <a href="{{ url_for('lunch') }}">Lunch</a>
         </nav>
     </header>
 
@@ -58,11 +59,12 @@
     <footer>
         <p class="footer-side">&copy; STEM-klubben 2025</p>
         <nav>
-            <a href="/">Hem</a>
-            <a href="/articles">Artiklar</a>
+            <a href="{{ url_for('index') }}">Hem</a>
+            <a href="{{ url_for('articles') }}">Artiklar</a>
             <a href="" class="no-link">Resurser</a>
-            <a href="/games">Spel</a>
-            <a href="/studytips">Pluggtips</a>
+            <a href="{{ url_for('games') }}">Spel</a>
+            <a href="{{ url_for('studytips') }}">Pluggtips</a>
+            <a href="{{ url_for('lunch') }}">Lunch</a>
         </nav>
         <p class="footer-side"><a href="https://youtu.be/dQw4w9WgXcQ">Användarvillkor</a></p>
     </footer>
