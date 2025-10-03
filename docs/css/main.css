@@ -72,10 +72,6 @@ li,p {
     color: cyan;
 }
 
-p {
-    text-align:justify;
-}
-
 footer nav {
     margin: 0;
 }
@@ -94,8 +90,6 @@ footer {
 .spread {
     display: flex;
     justify-content: space-between;
-}
-
 }
 
 @media screen and (max-width:770px) {

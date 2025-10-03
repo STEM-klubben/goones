@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Goones - Lunch{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/lunch.css">
+{% endblock head %}
+
+{% block description %}
+Lunchen på Shi Huangdis hem - Bistro Bentley!
+{% endblock description %}
+
+{% block content %}
+    <main>
+        <section class="lunch">
+            <h2>Lunch på Shi Huangdis hem - Bistro Bentley!</h2>
+            <p>Välkommen till Goones lunchsida! Här kan du hitta information om lunchen som serveras på Shi Huangdis hem och favoritrestaurang, Bistro Bentley. De erbjuder en varierad meny med något för alla smaker.</p>
+            <h3>Veckans meny</h3>
+            <div class="menu">
+                {% for item in menu_items %}
+                <div class="menu-item">
+                    <h4>{{ item.day }}</h4>
+                    <p>{{ item.veg }}</p>
+                    <p>{{ item.meat }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock content %}
